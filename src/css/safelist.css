@@ -1,0 +1,2 @@
+/* Keep some utility patterns and ensure brand color utilities are always available */
+@source inline("text-{navy,blue,gold} bg-{navy,blue,gold} border-{navy,blue,gold}");

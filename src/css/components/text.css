@@ -1,0 +1,38 @@
+/* Text Components - Visual styling classes for body text and utility text */
+
+@layer components {
+  /* Body Text Styles */
+  .body-1 {
+    font-family: theme(--font-family-sans-condensed);
+    font-size: theme(--font-size-body1);
+    line-height: theme(--line-height-body1);
+    letter-spacing: theme(--letter-spacing-body1);
+  }
+
+  .body-2 {
+    font-family: theme(--font-family-sans-condensed);
+    font-size: theme(--font-size-body2);
+    line-height: theme(--line-height-body2);
+  }
+
+  .body-3 {
+    font-family: theme(--font-family-sans);
+    font-size: theme(--font-size-body3);
+    line-height: theme(--line-height-body3);
+    letter-spacing: theme(--letter-spacing-body3);
+  }
+
+  /* Note Styles */
+  .note {
+    font-family: theme(--font-family-mono);
+    font-weight: theme(--font-weight-note);
+    font-size: theme(--font-size-note);
+    line-height: theme(--line-height-note);
+  }
+
+  .note-lg {
+    font-family: theme(--font-family-mono);
+    font-size: theme(--font-size-note-lg);
+    line-height: theme(--line-height-note-lg);
+  }
+}

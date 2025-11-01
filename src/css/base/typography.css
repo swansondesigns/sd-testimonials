@@ -1,0 +1,73 @@
+/* Base Typography - Default styling for semantic HTML elements */
+
+@layer base {
+  /* Heading Elements - Direct styles to avoid circular dependency */
+  h1 {
+    font-family: theme(--font-family-serif);
+    font-size: theme(--font-size-h1);
+    line-height: theme(--line-height-h1);
+    letter-spacing: theme(--letter-spacing-h1);
+    color: theme(--color-navy);
+  }
+
+  h2 {
+    font-family: theme(--font-family-serif);
+    font-size: theme(--font-size-h2);
+    line-height: theme(--line-height-h2);
+    letter-spacing: theme(--letter-spacing-h2);
+    color: theme(--color-gold);
+  }
+
+  h3 {
+    font-family: theme(--font-family-serif);
+    font-size: theme(--font-size-h3);
+    line-height: theme(--line-height-h3);
+    letter-spacing: theme(--letter-spacing-h3);
+    color: theme(--color-gold);
+    text-transform: uppercase;
+  }
+
+  h4 {
+    font-family: theme(--font-family-sans-condensed);
+    font-weight: theme(--font-weight-h4);
+    font-size: theme(--font-size-h4);
+    line-height: theme(--line-height-h4);
+    letter-spacing: theme(--letter-spacing-h4);
+    color: theme(--color-navy);
+    text-transform: uppercase;
+  }
+
+  /* Body Text Elements */
+  p {
+    font-family: theme(--font-family-sans-condensed);
+    font-size: theme(--font-size-body2);
+    line-height: theme(--line-height-body2);
+  }
+
+  /* Strong emphasis retains semantic weight */
+  strong {
+    font-weight: 600;
+  }
+
+  /* Code elements */
+  code {
+    font-family: theme(--font-family-mono);
+    font-weight: theme(--font-weight-note);
+    font-size: theme(--font-size-note);
+    line-height: theme(--line-height-note);
+    background-color: theme('colors.gray.100');
+    padding: 0.125rem 0.25rem;
+    border-radius: 0.25rem;
+  }
+
+  pre {
+    font-family: theme(--font-family-mono);
+    font-size: theme(--font-size-note-lg);
+    line-height: theme(--line-height-note-lg);
+    background-color: theme('colors.gray.900');
+    color: theme('colors.gray.100');
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+  }
+}

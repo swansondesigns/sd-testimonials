@@ -1,0 +1,54 @@
+/* Heading Components - Visual styling classes independent of semantic meaning */
+
+@layer components {
+  /* Title - Largest display heading */
+  .title {
+    font-family: theme(--font-family-serif);
+    font-size: theme(--font-size-title);
+    line-height: theme(--line-height-title);
+    letter-spacing: theme(--letter-spacing-title);
+    color: theme(--color-navy);
+    text-transform: none;
+  }
+
+  /* H1 Visual Style */
+  .h1 {
+    font-family: theme(--font-family-serif);
+    font-size: theme(--font-size-h1);
+    line-height: theme(--line-height-h1);
+    letter-spacing: theme(--letter-spacing-h1);
+    color: theme(--color-navy);
+    text-transform: none;
+  }
+
+  /* H2 Visual Style */
+  .h2 {
+    font-family: theme(--font-family-serif);
+    font-size: theme(--font-size-h2);
+    line-height: theme(--line-height-h2);
+    letter-spacing: theme(--letter-spacing-h2);
+    color: theme(--color-gold);
+    text-transform: none;
+  }
+
+  /* H3 Visual Style */
+  .h3 {
+    font-family: theme(--font-family-serif);
+    font-size: theme(--font-size-h3);
+    line-height: theme(--line-height-h3);
+    letter-spacing: theme(--letter-spacing-h3);
+    color: theme(--color-gold);
+    text-transform: uppercase;
+  }
+
+  /* H4 Visual Style */
+  .h4 {
+    font-family: theme(--font-family-sans-condensed);
+    font-weight: theme(--font-weight-h4);
+    font-size: theme(--font-size-h4);
+    line-height: theme(--line-height-h4);
+    letter-spacing: theme(--letter-spacing-h4);
+    color: theme(--color-navy);
+    text-transform: uppercase;
+  }
+}
