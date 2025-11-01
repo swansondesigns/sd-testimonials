@@ -6,72 +6,87 @@
 
 /* Design tokens via Tailwind v4 @theme */
 @theme {
-  /* Brand Colors */
-  --color-navy: #202338;   /* Navy */
-  --color-blue: #73819A;   /* French Blue (short name: blue) */
-  --color-gold: #837653;   /* Gold */
+	/* Brand Colors */
+	--color-navy: #202338; /* Navy */
+	--color-blue: #73819a; /* French Blue (short name: blue) */
+	--color-gold: #837653; /* Gold */
 
-  /* Font Families */
-  --font-family-serif: "Instrument Serif", Georgia, serif;
-  --font-family-sans: "IBM Plex Sans", system-ui, sans-serif;
-  --font-family-sans-condensed: "IBM Plex Sans Condensed", system-ui, sans-serif;
-  --font-family-mono: "IBM Plex Mono", "Consolas", monospace;
+	/* Font Families */
+	--font-family-serif: 'Instrument Serif', Georgia, serif;
+	--font-family-sans: 'IBM Plex Sans', system-ui, sans-serif;
+	--font-family-sans-condensed: 'IBM Plex Sans Condensed', system-ui, sans-serif;
+	--font-family-mono: 'IBM Plex Mono', 'Consolas', monospace;
 
-  /* Typography Combinations from Figma */
-  /* Title: Serif, regular, 112px, 100%, -2% (navy) */
-  --font-size-title: 7rem;        /* 112px */
-  --line-height-title: 1;         /* 100% */
-  --letter-spacing-title: -0.02em; /* -2% */
-  
-  /* H1: Serif, regular, 80px, 100%, -2% (navy) */
-  --font-size-h1: 5rem;           /* 80px */
-  --line-height-h1: 1;            /* 100% */
-  --letter-spacing-h1: -0.02em;   /* -2% */
-  
-  /* H2: Serif, regular, 64px, 60px, -2% (gold) */
-  --font-size-h2: 4rem;           /* 64px */
-  --line-height-h2: 3.75rem;      /* 60px */
-  --letter-spacing-h2: -0.02em;   /* -2% */
-  
-  /* H3: Serif, regular, 44px, 46px, -1% (uppercase, gold) */
-  --font-size-h3: 2.75rem;        /* 44px */
-  --line-height-h3: 2.875rem;     /* 46px */
-  --letter-spacing-h3: -0.01em;   /* -1% */
-  
-  /* H4: Sans-condensed, medium, 26px, 30px, 3% (uppercase, navy) */
-  --font-size-h4: 1.625rem;       /* 26px */
-  --font-weight-h4: 500;          /* medium */
-  --line-height-h4: 1.875rem;     /* 30px */
-  --letter-spacing-h4: 0.03em;    /* 3% */
-  
-  /* Body 1: Sans-condensed, regular, 28px, 38px, -1% */
-  --font-size-body1: 1.75rem;     /* 28px */
-  --line-height-body1: 2.375rem;  /* 38px */
-  --letter-spacing-body1: -0.01em; /* -1% */
-  
-  /* Body 2: Sans-condensed, regular, 24px, 32px, 0% */
-  --font-size-body2: 1.5rem;      /* 24px */
-  --line-height-body2: 2rem;      /* 32px */
-  
-  /* Body 3: Sans, regular, 18px, 148%, -0.5% */
-  --font-size-body3: 1.125rem;    /* 18px */
-  --line-height-body3: 1.48;      /* 148% */
-  --letter-spacing-body3: -0.005em; /* -0.5% */
-  
-  /* Note: Mono, medium, 12px, 18px, 0% */
-  --font-size-note: 0.75rem;      /* 12px */
-  --font-weight-note: 500;        /* medium */
-  --line-height-note: 1.125rem;   /* 18px */
-  
-  /* Note Large: Mono, regular, 15px, 22px, 0% */
-  --font-size-note-lg: 0.9375rem; /* 15px */
-  --line-height-note-lg: 1.375rem;/* 22px */
+	/* Typography Combinations from Figma */
+	/* Title: Serif, regular, 112px, 100%, -2% (navy) */
+	--font-size-title: 7rem; /* 112px */
+	--line-height-title: 1; /* 100% */
+	--letter-spacing-title: -0.02em; /* -2% */
+
+	/* H1: Serif, regular, 80px, 100%, -2% (navy) */
+	--font-size-h1: 5rem; /* 80px */
+	--line-height-h1: 1; /* 100% */
+	--letter-spacing-h1: -0.02em; /* -2% */
+
+	/* H2: Serif, regular, 64px, 60px, -2% (gold) */
+	--font-size-h2: 4rem; /* 64px */
+	--line-height-h2: 3.75rem; /* 60px */
+	--letter-spacing-h2: -0.02em; /* -2% */
+
+	/* H3: Serif, regular, 44px, 46px, -1% (uppercase, gold) */
+	--font-size-h3: 2.75rem; /* 44px */
+	--line-height-h3: 2.875rem; /* 46px */
+	--letter-spacing-h3: -0.01em; /* -1% */
+
+	/* H4: Sans-condensed, medium, 26px, 30px, 3% (uppercase, navy) */
+	--font-size-h4: 1.625rem; /* 26px */
+	--font-weight-h4: 500; /* medium */
+	--line-height-h4: 1.875rem; /* 30px */
+	--letter-spacing-h4: 0.03em; /* 3% */
+
+	/* Body 1: Sans-condensed, regular, 28px, 38px, -1% */
+	--font-size-body1: 1.75rem; /* 28px */
+	--line-height-body1: 2.375rem; /* 38px */
+	--letter-spacing-body1: -0.01em; /* -1% */
+
+	/* Body 2: Sans-condensed, regular, 24px, 32px, 0% */
+	--font-size-body2: 1.5rem; /* 24px */
+	--line-height-body2: 2rem; /* 32px */
+
+	/* Body 3: Sans, regular, 18px, 148%, -0.5% */
+	--font-size-body3: 1.125rem; /* 18px */
+	--line-height-body3: 1.48; /* 148% */
+	--letter-spacing-body3: -0.005em; /* -0.5% */
+
+	/* Note: Mono, medium, 12px, 18px, 0% */
+	--font-size-note: 0.75rem; /* 12px */
+	--font-weight-note: 500; /* medium */
+	--line-height-note: 1.125rem; /* 18px */
+
+	/* Note Large: Mono, regular, 15px, 22px, 0% */
+	--font-size-note-lg: 0.9375rem; /* 15px */
+	--line-height-note-lg: 1.375rem; /* 22px */
 }
 
 /* Layer Imports - Organized CSS architecture */
 @import './base/typography.css';
 @import './components/headings.css';
 @import './components/text.css';
+
+/* Quill Editor Typography */
+@layer components {
+	.ql-editor {
+		font-family: theme(--font-family-sans-condensed);
+		font-size: 18px;
+		line-height: 1.6;
+	}
+
+	.ql-editor p,
+	.ql-editor li {
+		font-size: inherit;
+		line-height: inherit;
+	}
+}
 
 /* Content sources */
 @source "./src/**/*.{html,js,php}";

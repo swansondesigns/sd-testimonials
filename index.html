@@ -7,6 +7,7 @@
 	<title>Submit Your Testimonial | Swanson Designs</title>
 	<link href="./dist/css/tailwind.css" rel="stylesheet">
 	<!-- Quill Rich Text Editor -->
+	<link href="https://cdn.quilljs.com/1.3.6/quill.core.css" rel="stylesheet">
 	<link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
 </head>
 
@@ -25,14 +26,16 @@
 			<div class="max-w-2xl mx-auto">
 				<h2 class="text-3xl font-serif text-gold mb-8">Submit a Testimonial</h2>
 
-        <!-- Success Message -->
-        <div id="success-message" class="hidden bg-green-100 border border-green-400 text-green-800 px-6 py-4 rounded-md mb-8">
-          <p class="font-sans-condensed font-medium">Thank you for your testimonial!</p>
-          <p class="text-sm text-green-700 mt-1">We've received your submission and will review it shortly.</p>
-        </div>
+				<!-- Success Message -->
+				<div id="success-message"
+					class="hidden bg-green-100 border border-green-400 text-green-800 px-6 py-4 rounded-md mb-8">
+					<p class="font-sans-condensed font-medium">Thank you for your testimonial!</p>
+					<p class="text-sm text-green-700 mt-1">We've received your submission and will review it shortly.
+					</p>
+				</div>
 
-        <!-- Netlify Form -->
-        <form id="testimonial-form" name="testimonial" method="POST" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" action="/?success=true" class="space-y-8">
+				<!-- Netlify Form -->
+				<form id="testimonial-form" name="testimonial" method="POST" netlify netlify-honeypot="bot-field"
 					enctype="multipart/form-data" class="space-y-8">
 					<!-- Honeypot field (hidden from users) -->
 					<div class="hidden">
@@ -50,56 +53,71 @@
 							placeholder="Your full name">
 					</div>
 
-					<!-- Company/Organization Field with Current/Former Toggle -->
-					<div class="space-y-3">
-						<label class="block text-body3 font-sans-condensed font-medium text-navy">
-							Company/Organization
-							<span class="text-gold">*</span>
-						</label>
-						<input type="text" id="company" name="company" required
-							class="w-full px-4 py-3 border border-gray-300 rounded-md font-sans focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-							placeholder="Company or organization name">
-						<fieldset class="mt-3">
-							<legend class="text-sm text-gray-600 mb-2">Status:</legend>
+					<!-- Work Experience Group -->
+					<div class="bg-gray-50 border border-gray-200 p-4 rounded-md space-y-4">
+						<!-- Company/Organization -->
+						<div>
+							<label for="company"
+								class="block text-body3 font-sans-condensed font-medium text-navy mb-2">
+								Company/Organization
+								<span class="text-gold">*</span>
+							</label>
+							<input type="text" id="company" name="company" required
+								class="w-full px-4 py-3 border border-gray-300 rounded-md font-sans bg-white focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+								placeholder="Company or organization name">
+						</div>
+
+						<!-- Role/Title -->
+						<div>
+							<label for="role" class="block text-body3 font-sans-condensed font-medium text-navy mb-2">
+								Role/Title
+								<span class="text-gold">*</span>
+							</label>
+							<input type="text" id="role" name="role" required
+								class="w-full px-4 py-3 border border-gray-300 rounded-md font-sans bg-white focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+								placeholder="Your role or title">
+						</div>
+
+						<!-- Status Footer -->
+						<div class="flex items-center justify-between pt-3 border-t border-gray-300">
+							<span class="text-body3 font-sans-condensed font-medium text-navy">Status:</span>
 							<div class="flex gap-6">
 								<label class="flex items-center gap-2 cursor-pointer">
-									<input type="radio" name="company-status" value="current" checked
+									<input type="radio" name="work-status" value="current" checked
 										class="w-4 h-4 text-blue focus:ring-2 focus:ring-blue">
 									<span class="text-sm font-sans">Current</span>
 								</label>
 								<label class="flex items-center gap-2 cursor-pointer">
-									<input type="radio" name="company-status" value="former"
+									<input type="radio" name="work-status" value="former"
 										class="w-4 h-4 text-blue focus:ring-2 focus:ring-blue">
 									<span class="text-sm font-sans">Former</span>
 								</label>
 							</div>
-						</fieldset>
+						</div>
 					</div>
 
-					<!-- Role/Title Field with Current/Former Toggle -->
-					<div class="space-y-3">
-						<label for="role" class="block text-body3 font-sans-condensed font-medium text-navy">
-							Role/Title
-							<span class="text-gold">*</span>
+					<!-- Display Preferences -->
+					<div>
+						<label class="block text-body3 font-sans-condensed font-medium text-navy mb-3">
+							On the website you made display:
 						</label>
-						<input type="text" id="role" name="role" required
-							class="w-full px-4 py-3 border border-gray-300 rounded-md font-sans focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
-							placeholder="Your role or title">
-						<fieldset class="mt-3">
-							<legend class="text-sm text-gray-600 mb-2">Status:</legend>
-							<div class="flex gap-6">
-								<label class="flex items-center gap-2 cursor-pointer">
-									<input type="radio" name="role-status" value="current" checked
-										class="w-4 h-4 text-blue focus:ring-2 focus:ring-blue">
-									<span class="text-sm font-sans">Current</span>
-								</label>
-								<label class="flex items-center gap-2 cursor-pointer">
-									<input type="radio" name="role-status" value="former"
-										class="w-4 h-4 text-blue focus:ring-2 focus:ring-blue">
-									<span class="text-sm font-sans">Former</span>
-								</label>
-							</div>
-						</fieldset>
+						<div class="space-y-2">
+							<label class="flex items-center gap-2 cursor-pointer">
+								<input type="checkbox" name="display-company-name"
+									class="w-4 h-4 text-blue focus:ring-2 focus:ring-blue rounded">
+								<span class="text-body3 font-sans">My company name</span>
+							</label>
+							<label class="flex items-center gap-2 cursor-pointer">
+								<input type="checkbox" name="display-company-logo"
+									class="w-4 h-4 text-blue focus:ring-2 focus:ring-blue rounded">
+								<span class="text-body3 font-sans">My company logo</span>
+							</label>
+							<label class="flex items-center gap-2 cursor-pointer">
+								<input type="checkbox" name="display-role"
+									class="w-4 h-4 text-blue focus:ring-2 focus:ring-blue rounded">
+								<span class="text-body3 font-sans">My role/title</span>
+							</label>
+						</div>
 					</div>
 
 					<!-- Testimonial Field with Quill Editor -->
@@ -148,14 +166,47 @@
 									<input type="radio" name="photo-method" value="url"
 										class="w-4 h-4 mt-1 text-blue focus:ring-2 focus:ring-blue">
 									<div class="flex-1">
-										<span class="text-body3 font-sans">Image URL</span>
+										<span class="text-body3 font-sans">
+											Image URL
+											<div class="relative inline-block ml-1">
+												<button type="button"
+													class="image-url-help text-blue hover:text-gold underline text-xs cursor-help"
+													data-platform="pc">
+													On PC
+												</button>
+												<!-- PC Tooltip -->
+												<div class="image-url-tooltip hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-navy text-white px-3 py-2 rounded-md text-xs whitespace-nowrap shadow-lg z-10"
+													data-platform="pc">
+													Right-click image → Copy image link
+													<div
+														class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-navy">
+													</div>
+												</div>
+											</div>
+											<span class="mx-1 text-blue">/</span>
+											<div class="relative inline-block">
+												<button type="button"
+													class="image-url-help text-blue hover:text-gold underline text-xs cursor-help"
+													data-platform="mac">
+													On a Mac
+												</button>
+												<!-- Mac Tooltip -->
+												<div class="image-url-tooltip hidden absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 bg-navy text-white px-3 py-2 rounded-md text-xs whitespace-nowrap shadow-lg z-10"
+													data-platform="mac">
+													Ctrl+click image → Copy image link
+													<div
+														class="absolute top-full left-1/2 transform -translate-x-1/2 border-4 border-transparent border-t-navy">
+													</div>
+												</div>
+											</div>
+										</span>
 										<input type="url" name="image-url" placeholder="https://example.com/photo.jpg"
 											class="w-full px-4 py-2 mt-2 border border-gray-300 rounded-md font-sans text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent">
 									</div>
 								</label>
 
 								<!-- File Upload Option -->
-								<label class="flex items-start gap-3 cursor-pointer">
+								<label class="flex items-start gap-3 mb-4 cursor-pointer">
 									<input type="radio" name="photo-method" value="upload"
 										class="w-4 h-4 mt-1 text-blue focus:ring-2 focus:ring-blue">
 									<div class="flex-1">
@@ -163,6 +214,17 @@
 										<input type="file" name="photo-upload" accept="image/*"
 											class="w-full mt-2 px-3 py-2 border border-gray-300 rounded-md text-sm focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent">
 										<p class="text-xs text-gray-500 mt-1">Max file size: 25MB</p>
+									</div>
+								</label>
+
+								<!-- Follow Up Option -->
+								<label class="flex items-start gap-3 cursor-pointer">
+									<input type="radio" name="photo-method" value="follow-up"
+										class="w-4 h-4 mt-1 text-blue focus:ring-2 focus:ring-blue">
+									<div class="flex-1">
+										<span class="text-body3 font-sans">Follow up with me</span>
+										<p class="text-xs text-gray-500 mt-1">Send me a message and I'll provide my
+											photo</p>
 									</div>
 								</label>
 							</fieldset>
@@ -180,6 +242,18 @@
 							placeholder="your.email@example.com">
 						<p class="text-xs text-gray-500 mt-1">We'll use this to follow up if we have questions about
 							your testimonial.</p>
+					</div>
+
+					<!-- Message Field -->
+					<div>
+						<label for="message" class="block text-body3 font-sans-condensed font-medium text-navy mb-2">
+							Message
+						</label>
+						<p class="text-xs text-gray-500 mb-2">Is there anything you want us to include, exclude, or
+							follow up with you about?</p>
+						<textarea id="message" name="message" rows="4"
+							class="w-full px-4 py-3 border border-gray-300 rounded-md font-sans focus:outline-none focus:ring-2 focus:ring-blue focus:border-transparent"
+							placeholder="Let us know if there's anything we should know about..."></textarea>
 					</div>
 
 					<!-- Submit Button -->
@@ -210,8 +284,8 @@
 			modules: {
 				toolbar: [
 					['bold', 'italic', 'underline'],
-					['list', 'bullet'],
-					[{ 'align': [] }]
+					[{ list: 'ordered' }, { list: 'bullet' }],
+					[{ align: [] }]
 				]
 			},
 			placeholder: 'Tell us about your experience...'
@@ -232,25 +306,39 @@
 			}
 		});
 
-    // Handle form submission to ensure Quill content is saved
-    const form = document.getElementById('testimonial-form');
-    form.addEventListener('submit', function(e) {
-      document.getElementById('testimonial-hidden').value = quill.root.innerHTML;
-      
-      // Validate that testimonial has content
-      if (quill.getText().trim().length === 0) {
-        e.preventDefault();
-        alert('Please enter a testimonial.');
-      }
-    });
+		// Handle custom tooltips for image URL help
+		document.querySelectorAll('.image-url-help').forEach(button => {
+			const platform = button.dataset.platform;
+			const tooltip = document.querySelector(`.image-url-tooltip[data-platform="${platform}"]`);
 
-    // Check for success parameter and show success message
-    const params = new URLSearchParams(window.location.search);
-    if (params.get('success') === 'true') {
-      document.getElementById('success-message').classList.remove('hidden');
-      form.style.display = 'none';
-      window.scrollTo(0, 0);
-    }
+			button.addEventListener('mouseenter', function () {
+				tooltip.classList.remove('hidden');
+			});
+
+			button.addEventListener('mouseleave', function () {
+				tooltip.classList.add('hidden');
+			});
+		});
+
+		// Handle form submission to ensure Quill content is saved
+		const form = document.getElementById('testimonial-form');
+		form.addEventListener('submit', function (e) {
+			document.getElementById('testimonial-hidden').value = quill.root.innerHTML;
+
+			// Validate that testimonial has content
+			if (quill.getText().trim().length === 0) {
+				e.preventDefault();
+				alert('Please enter a testimonial.');
+			}
+		});
+
+		// Check for success parameter and show success message
+		const params = new URLSearchParams(window.location.search);
+		if (params.get('success') === 'true') {
+			document.getElementById('success-message').classList.remove('hidden');
+			form.style.display = 'none';
+			window.scrollTo(0, 0);
+		}
 	</script>
 </body>
 
