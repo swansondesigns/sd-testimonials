@@ -25,8 +25,14 @@
 			<div class="max-w-2xl mx-auto">
 				<h2 class="text-3xl font-serif text-gold mb-8">Submit a Testimonial</h2>
 
-				<!-- Netlify Form -->
-				<form name="testimonial" method="POST" netlify netlify-honeypot="bot-field"
+        <!-- Success Message -->
+        <div id="success-message" class="hidden bg-green-100 border border-green-400 text-green-800 px-6 py-4 rounded-md mb-8">
+          <p class="font-sans-condensed font-medium">Thank you for your testimonial!</p>
+          <p class="text-sm text-green-700 mt-1">We've received your submission and will review it shortly.</p>
+        </div>
+
+        <!-- Netlify Form -->
+        <form id="testimonial-form" name="testimonial" method="POST" netlify netlify-honeypot="bot-field" enctype="multipart/form-data" action="/?success=true" class="space-y-8">
 					enctype="multipart/form-data" class="space-y-8">
 					<!-- Honeypot field (hidden from users) -->
 					<div class="hidden">
@@ -226,16 +232,25 @@
 			}
 		});
 
-		// Handle form submission to ensure Quill content is saved
-		document.querySelector('form').addEventListener('submit', function (e) {
-			document.getElementById('testimonial-hidden').value = quill.root.innerHTML;
+    // Handle form submission to ensure Quill content is saved
+    const form = document.getElementById('testimonial-form');
+    form.addEventListener('submit', function(e) {
+      document.getElementById('testimonial-hidden').value = quill.root.innerHTML;
+      
+      // Validate that testimonial has content
+      if (quill.getText().trim().length === 0) {
+        e.preventDefault();
+        alert('Please enter a testimonial.');
+      }
+    });
 
-			// Validate that testimonial has content
-			if (quill.getText().trim().length === 0) {
-				e.preventDefault();
-				alert('Please enter a testimonial.');
-			}
-		});
+    // Check for success parameter and show success message
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('success') === 'true') {
+      document.getElementById('success-message').classList.remove('hidden');
+      form.style.display = 'none';
+      window.scrollTo(0, 0);
+    }
 	</script>
 </body>
 
